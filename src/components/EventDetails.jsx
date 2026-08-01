@@ -1,44 +1,116 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Sparkles } from 'lucide-react';
+import { Calendar, Clock, MapPin, Navigation, ShieldCheck, Shirt } from 'lucide-react';
 
 export default function EventDetails() {
   return (
-    <section id="event" className="w-full min-h-screen bg-transparent px-4 sm:px-8 lg:px-12 xl:px-16 py-20 flex flex-col justify-center items-center relative">
-      <div className="max-w-[1400px] mx-auto w-full">
-        <div className="text-center mb-14">
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-navy font-bold">Thông Tin Buổi Lễ</h2>
+    <section id="event" className="w-full min-h-screen py-24 px-4 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-center items-center relative overflow-hidden bg-transparent">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
+      <div className="max-w-[1320px] mx-auto w-full space-y-12">
+        {/* Section Header */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <span className="text-xs uppercase tracking-[0.35em] text-gold font-bold font-michroma block">
+            — CEREMONY DETAILS —
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-tight">
+            Thông Tin <span className="gold-text-gradient italic font-serif">Buổi Lễ</span>
+          </h2>
+          <p className="text-base sm:text-lg text-white/70 font-sans max-w-xl mx-auto leading-relaxed">
+            Mọi thông tin chi tiết về thời gian, địa điểm và chương trình lễ tốt nghiệp được cập nhật đầy đủ dưới đây.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
-          {/* Date Card */}
-          <div className="glass-card p-8 sm:p-10 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-3xl border border-gold/30 group">
-            <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gold-shadow">
-              <Calendar className="w-8 h-8 text-gold" />
+        {/* Bento Grid Architecture */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+          
+          {/* Main Hero Card: Date (Span 7) */}
+          <div className="md:col-span-7 dark-glass-card p-8 sm:p-10 lg:p-12 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between min-h-[320px]">
+            {/* Background subtle pattern or glow */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-gold/10 rounded-full blur-3xl group-hover:bg-gold/20 transition-all duration-700 pointer-events-none" />
+            
+            <div className="flex items-center justify-between z-10">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-widest">
+                <Calendar className="w-4 h-4 text-gold" /> Ngày Diễn Ra
+              </div>
+              <span className="font-michroma text-xs text-gold/80 uppercase tracking-widest">YEAR 2024</span>
             </div>
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-navy/70 font-bold mb-3">Ngày Diễn Ra</h3>
-            <p className="font-serif text-2xl sm:text-3xl text-navy font-bold">Thứ Bảy, 15/06/2024</p>
+
+            <div className="my-8 z-10">
+              <div className="font-michroma text-xs uppercase tracking-[0.3em] text-white/60 mb-2 font-bold">Thứ Bảy</div>
+              <div className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
+                15 <span className="gold-text-gradient font-sans font-light">/</span> 06 <span className="gold-text-gradient font-sans font-light">/</span> 2024
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-6 border-t border-gold/20 z-10 text-white/80 text-xs sm:text-sm">
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-gold" /> Sự kiện chính thức
+              </span>
+              <span className="text-gold font-bold font-michroma">10:00 AM — 12:00 PM</span>
+            </div>
           </div>
 
-          {/* Time Card */}
-          <div className="glass-card p-8 sm:p-10 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-3xl border border-gold/30 group">
-            <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gold-shadow">
-              <Clock className="w-8 h-8 text-gold" />
+          {/* Time & Schedule Card (Span 5) */}
+          <div className="md:col-span-5 dark-glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between">
+            <div className="flex items-center justify-between z-10 mb-6">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-widest">
+                <Clock className="w-4 h-4 text-gold" /> Thời Gian
+              </div>
             </div>
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-navy/70 font-bold mb-3">Thời Gian</h3>
-            <p className="font-serif text-2xl sm:text-3xl text-navy font-bold">10:00 AM</p>
+
+            <div className="space-y-4 my-auto z-10">
+              <div className="font-serif text-4xl sm:text-5xl text-white font-bold">
+                10:00 <span className="text-gold text-2xl font-sans uppercase">AM</span>
+              </div>
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                Vui lòng có mặt trước <strong className="text-gold font-semibold">15 phút</strong> để làm thủ tục check-in và ổn định vị trí chỗ ngồi.
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-gold/20 z-10 flex items-center justify-between text-xs text-white/60">
+              <span>Thời lượng lễ: ~2 tiếng</span>
+              <span className="text-gold font-semibold">Mở cửa đón khách từ 09:30 AM</span>
+            </div>
           </div>
 
-          {/* Venue Card */}
-          <div className="glass-card p-8 sm:p-10 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 sm:col-span-2 md:col-span-1 rounded-3xl border border-gold/30 group">
-            <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gold-shadow">
-              <MapPin className="w-8 h-8 text-gold" />
+          {/* Venue Location Card (Span 8) */}
+          <div className="md:col-span-8 dark-glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-3 z-10 max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest border border-gold/20">
+                <MapPin className="w-3.5 h-3.5" /> Địa Điểm Buổi Lễ
+              </div>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
+                Hội trường Lớn — <span className="gold-text-gradient">Đại học Bách Khoa</span>
+              </h3>
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                Địa điểm chính diễn ra lễ trao bằng. Bãi đậu xe máy &amp; ô tô nằm tại Cổng A1 &amp; A2 với bảng chỉ dẫn vào hội trường.
+              </p>
             </div>
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-navy/70 font-bold mb-3">Địa Điểm</h3>
-            <p className="font-serif text-2xl sm:text-3xl text-navy font-bold leading-tight">
-              Hội trường Lớn<br />
-              <span className="text-lg text-navy/70 font-normal">Đại học Bách Khoa</span>
-            </p>
+
+            <a
+              href="#map"
+              className="shrink-0 z-10 px-6 py-3.5 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300 flex items-center gap-2"
+            >
+              <Navigation className="w-4 h-4" /> Xem Bản Đồ
+            </a>
           </div>
+
+          {/* Dress Code Card (Span 4) */}
+          <div className="md:col-span-4 dark-glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between">
+            <div className="space-y-3 z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest border border-gold/20">
+                <Shirt className="w-3.5 h-3.5" /> Trang Phục
+              </div>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                Lịch Sự &amp; Trang Trọng
+              </h3>
+              <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+                Trang phục công sở/sơ mi hoặc áo cử nhân để có những bức ảnh kỷ niệm tuyệt đẹp nhất.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
