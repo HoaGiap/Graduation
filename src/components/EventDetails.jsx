@@ -29,16 +29,13 @@ export default function EventDetails() {
 
   return (
     <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow">
-      {/* 1. Full-bleed background GIF animation */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black">
+      {/* 1. Raw full-bleed background GIF (không lớp phủ, không mờ) */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <img 
           src="https://res.cloudinary.com/dssih4fhl/image/upload/v1785587925/anime_stickers_for_discord_4_Cats_Memes_GIF_-_Cats_Cat_Memes_-_Descubrir_y_compartir_GIFs_a5lhk1.gif" 
           alt="Section 3 Background Animation"
-          className="w-full h-full object-cover opacity-40 mix-blend-screen scale-105 pointer-events-none"
+          className="w-full h-full object-cover pointer-events-none"
         />
-        {/* Vignette / Dark gradient overlay & ambient glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/75" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[160px]" />
       </div>
 
       {/* 2. Nội dung chính với font Barlow (z-10, px-8 md:px-16 lg:px-20, pt-24 pb-16) */}
