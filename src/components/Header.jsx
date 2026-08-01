@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Award, Menu, X, Home, Compass, MessageSquareQuote, Calendar, CheckSquare } from 'lucide-react';
+import { Award, Menu, X, Home, Compass, MessageSquareQuote, Calendar, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -70,15 +70,15 @@ export default function Header() {
             <Calendar className="w-4 h-4 text-gold/80" />
             Thông Tin
           </a>
-          <a className="text-xs sm:text-sm uppercase tracking-widest text-navy/80 hover:text-gold font-bold transition-colors flex items-center gap-1.5" href="#rsvp">
-            <CheckSquare className="w-4 h-4 text-gold/80" />
-            RSVP & Bản Đồ
+          <a className="text-xs sm:text-sm uppercase tracking-widest text-navy/80 hover:text-gold font-bold transition-colors flex items-center gap-1.5" href="#map">
+            <MapPin className="w-4 h-4 text-gold/80" />
+            Bản Đồ
           </a>
         </nav>
         
         <div className="flex items-center gap-3 shrink-0">
-          <a className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 bg-navy text-white text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-gold hover:text-navy transition-all shadow-md hover:shadow-gold/20" href="#rsvp">
-            RSVP NGAY
+          <a className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 bg-navy text-white text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-gold hover:text-navy transition-all shadow-md hover:shadow-gold/20" href="#map">
+            XEM BẢN ĐỒ
           </a>
           
           {/* Mobile Menu Toggle Button */}
@@ -107,11 +107,11 @@ export default function Header() {
           <a onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 text-sm uppercase tracking-wider text-navy/80 hover:text-gold py-2 font-medium" href="#event">
             <Calendar className="w-4 h-4 text-gold" /> Thông Tin
           </a>
-          <a onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 text-sm uppercase tracking-wider text-navy/80 hover:text-gold py-2 font-medium" href="#rsvp">
-            <CheckSquare className="w-4 h-4 text-gold" /> RSVP & Bản Đồ
+          <a onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 text-sm uppercase tracking-wider text-navy/80 hover:text-gold py-2 font-medium" href="#map">
+            <MapPin className="w-4 h-4 text-gold" /> Bản Đồ
           </a>
-          <a onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-3 bg-navy text-white text-xs uppercase tracking-widest rounded-full font-semibold mt-3" href="#rsvp">
-            RSVP NGAY
+          <a onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-3 bg-navy text-white text-xs uppercase tracking-widest rounded-full font-semibold mt-3" href="#map">
+            XEM BẢN ĐỒ
           </a>
         </div>
       )}

@@ -5,7 +5,6 @@ import HeroSection from './components/HeroSection';
 import JourneySection from './components/JourneySection';
 import EventDetails from './components/EventDetails';
 import PersonalMessage from './components/PersonalMessage';
-import RSVPForm from './components/RSVPForm';
 import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
 
@@ -174,7 +173,6 @@ export default function App() {
         <div className="bg-navy/95 text-white transition-colors duration-700 backdrop-blur-xl border-t border-gold/30">
           <EventDetails />
           <PersonalMessage />
-          <RSVPForm guestName={guestName} />
           <LocationSection />
         </div>
       </main>
