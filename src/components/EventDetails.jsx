@@ -28,36 +28,36 @@ export default function EventDetails() {
   ];
 
   return (
-    <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between">
+    <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow">
       {/* 1. Background video container (Sẵn sàng cho FadingVideo full-bleed sau này) */}
       <div className="absolute inset-0 w-full h-full -z-0 pointer-events-none bg-black">
         {/* Ambient subtle light glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[160px]" />
       </div>
 
-      {/* 2. Nội dung chính (z-10, px-8 md:px-16 lg:px-20, pt-24 pb-16, flex flex-col min-h-screen) */}
-      <div className="z-10 px-8 md:px-16 lg:px-20 pt-24 pb-16 flex flex-col justify-between min-h-screen max-w-[1440px] mx-auto w-full">
+      {/* 2. Nội dung chính với font Barlow (z-10, px-8 md:px-16 lg:px-20, pt-24 pb-16) */}
+      <div className="z-10 px-8 md:px-16 lg:px-20 pt-24 pb-16 flex flex-col justify-between min-h-screen max-w-[1440px] mx-auto w-full font-barlow">
         
         {/* Header Block */}
         <div className="space-y-4 max-w-4xl">
           {/* Kicker */}
-          <div className="text-sm text-white/80 font-michroma uppercase tracking-[0.25em]">
+          <div className="text-sm text-white/80 font-barlow uppercase tracking-[0.25em] font-medium">
             // CEREMONY DETAILS
           </div>
           
           {/* Heading */}
-          <h2 className="font-serif italic text-6xl md:text-7xl lg:text-[6rem] tracking-[-3px] text-white leading-[0.95] font-normal">
+          <h2 className="font-barlow italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-[-3px] text-white leading-[0.95]">
             Thông Tin <br />
-            <span className="gold-text-gradient font-serif italic">Buổi Lễ</span>
+            <span className="gold-text-gradient font-barlow italic">Buổi Lễ</span>
           </h2>
         </div>
 
-        {/* 3. Ba Card (Grid 1 cột mobile, 3 cột desktop, gap-6 mt-16) */}
+        {/* 3. Ba Card Liquid Glass với typography Barlow */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 items-stretch w-full">
           {cardsData.map((card) => (
             <div
               key={card.id}
-              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative"
+              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative font-barlow"
             >
               {/* Hàng trên: Icon 44x44 (liquid-glass square) bên trái + 4 pill tags bên phải */}
               <div className="flex items-start justify-between gap-3 mb-6">
@@ -71,7 +71,7 @@ export default function EventDetails() {
                   {card.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold text-white/90 bg-white/10 backdrop-blur-md border border-white/10 whitespace-nowrap"
+                      className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-medium font-barlow text-white/90 bg-white/10 backdrop-blur-md border border-white/10 whitespace-nowrap"
                     >
                       {tag}
                     </span>
@@ -79,13 +79,13 @@ export default function EventDetails() {
                 </div>
               </div>
 
-              {/* Dưới: Title + Body text (+ Nút chỉ đường cho card địa điểm) */}
+              {/* Dưới: Title + Body text với font Barlow */}
               <div className="space-y-3 mt-auto">
-                <h3 className="font-serif italic text-3xl md:text-4xl text-white font-bold tracking-tight leading-tight">
+                <h3 className="font-barlow italic text-3xl md:text-4xl text-white font-bold tracking-tight leading-tight">
                   {card.title}
                 </h3>
                 
-                <p className="text-sm text-white/90 leading-relaxed max-w-[32ch]">
+                <p className="text-sm font-barlow text-white/90 leading-relaxed max-w-[32ch]">
                   {card.body}
                 </p>
 
@@ -93,7 +93,7 @@ export default function EventDetails() {
                   <div className="pt-4">
                     <a
                       href="#map"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300"
+                      className="font-barlow inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300"
                     >
                       <Navigation className="w-3.5 h-3.5" /> Xem Bản Đồ
                     </a>
