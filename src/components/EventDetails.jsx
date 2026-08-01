@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, Clock, MapPin, Navigation } from 'lucide-react';
 
 export default function EventDetails() {
+  const sectionRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   const cardsData = [
     {
       id: 'date',
@@ -27,8 +30,41 @@ export default function EventDetails() {
     }
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        // Smooth scroll progress: 0 when top enters bottom of screen, 1 when inside screen
+        const startThreshold = windowHeight * 0.9;
+        const endThreshold = windowHeight * 0.25;
+        const rawProgress = (startThreshold - rect.top) / (startThreshold - endThreshold);
+        const progress = Math.min(Math.max(rawProgress, 0), 1);
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const opacity = scrollProgress;
+  const translateY = (1 - scrollProgress) * 50;
+  const blur = (1 - scrollProgress) * 12;
+
   return (
-    <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow">
+    <section 
+      ref={sectionRef}
+      id="event" 
+      className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow transition-all duration-200 ease-out"
+      style={{
+        opacity: opacity,
+        transform: `translateY(${translateY}px)`,
+        filter: `blur(${blur}px)`,
+        willChange: 'opacity, transform, filter'
+      }}
+    >
       {/* 1. Raw full-bleed background GIF (không lớp phủ, không mờ) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <img 
