@@ -91,22 +91,22 @@ export default function EventDetails() {
           </h2>
         </div>
 
-        {/* 3. Ba Card Liquid Glass Trong Suốt Căn Giữa (Center Aligned) */}
+        {/* 3. Ba Card Liquid Glass Trong Suốt Nguyên Bản */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 items-stretch w-full">
           {cardsData.map((card) => (
             <div
               key={card.id}
-              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between items-center text-center group hover:-translate-y-1 transition-all duration-500 relative font-barlow"
+              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative font-barlow"
             >
-              {/* Hàng trên căn giữa: Icon 44x44 ở giữa + 4 pill tags căn giữa bên dưới */}
-              <div className="flex flex-col items-center justify-center gap-3 w-full mb-4">
-                {/* Icon square 44x44 ở giữa */}
-                <div className="w-11 h-11 shrink-0 rounded-xl liquid-glass flex items-center justify-center shadow-inner mx-auto">
+              {/* Hàng trên: Icon 44x44 (liquid-glass square) + 4 pill tags trong suốt */}
+              <div className="flex items-start justify-between gap-3 mb-6">
+                {/* Icon square 44x44 (11x4 = 44px) */}
+                <div className="w-11 h-11 shrink-0 rounded-xl liquid-glass flex items-center justify-center shadow-inner">
                   {card.icon}
                 </div>
 
-                {/* 4 Pill Tags căn giữa */}
-                <div className="flex flex-wrap gap-1.5 justify-center max-w-full">
+                {/* 4 Pill Tags trong suốt glassmorphism với bóng chữ sắc nét */}
+                <div className="flex flex-wrap gap-1.5 justify-end max-w-[68%]">
                   {card.tags.map((tag, idx) => (
                     <span
                       key={idx}
@@ -118,18 +118,18 @@ export default function EventDetails() {
                 </div>
               </div>
 
-              {/* Dưới căn giữa: Title + Body text + Button */}
-              <div className="space-y-3 mt-auto flex flex-col items-center text-center w-full">
-                <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
+              {/* Dưới: Title + Body text với bóng chữ chống chói nền */}
+              <div className="space-y-3 mt-auto">
+                <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                   {card.title}
                 </h3>
                 
-                <p className="text-sm font-barlow text-white/90 leading-relaxed max-w-[32ch] text-center mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
+                <p className="text-sm font-barlow text-white/90 leading-relaxed max-w-[32ch] drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
                   {card.body}
                 </p>
 
                 {card.hasMapAction && (
-                  <div className="pt-4 mx-auto">
+                  <div className="pt-4">
                     <a
                       href="#map"
                       className="font-barlow inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/50 transition-all duration-300 shadow-md"
