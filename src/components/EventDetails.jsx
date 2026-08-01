@@ -46,13 +46,13 @@ export default function EventDetails() {
           </div>
           
           {/* Heading */}
-          <h2 className="font-barlow italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-[-3px] text-white leading-[0.95]">
+          <h2 className="font-instrument italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-[-3px] text-white leading-[0.95]">
             Thông Tin <br />
-            <span className="gold-text-gradient font-barlow italic">Buổi Lễ</span>
+            <span className="gold-text-gradient font-instrument italic">Buổi Lễ</span>
           </h2>
         </div>
 
-        {/* 3. Ba Card Liquid Glass với typography Barlow */}
+        {/* 3. Ba Card Liquid Glass với typography Barlow + Instrument Serif */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 items-stretch w-full">
           {cardsData.map((card) => (
             <div
@@ -79,9 +79,9 @@ export default function EventDetails() {
                 </div>
               </div>
 
-              {/* Dưới: Title + Body text với font Barlow */}
+              {/* Dưới: Title (font-instrument italic) + Body text (font-barlow) */}
               <div className="space-y-3 mt-auto">
-                <h3 className="font-barlow italic text-3xl md:text-4xl text-white font-bold tracking-tight leading-tight">
+                <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight">
                   {card.title}
                 </h3>
                 
