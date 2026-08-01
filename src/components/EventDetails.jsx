@@ -29,9 +29,15 @@ export default function EventDetails() {
 
   return (
     <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow">
-      {/* 1. Background video container (Sẵn sàng cho FadingVideo full-bleed sau này) */}
-      <div className="absolute inset-0 w-full h-full -z-0 pointer-events-none bg-black">
-        {/* Ambient subtle light glow */}
+      {/* 1. Full-bleed background GIF animation */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black">
+        <img 
+          src="https://res.cloudinary.com/dssih4fhl/image/upload/v1785587925/anime_stickers_for_discord_4_Cats_Memes_GIF_-_Cats_Cat_Memes_-_Descubrir_y_compartir_GIFs_a5lhk1.gif" 
+          alt="Section 3 Background Animation"
+          className="w-full h-full object-cover opacity-40 mix-blend-screen scale-105 pointer-events-none"
+        />
+        {/* Vignette / Dark gradient overlay & ambient glow */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/75" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[160px]" />
       </div>
 
