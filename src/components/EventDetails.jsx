@@ -28,9 +28,16 @@ export default function EventDetails() {
   ];
 
   return (
-    <section id="event" className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow">
-      {/* 1. Raw full-bleed background GIF (không lớp phủ, không mờ) */}
+    <section id="event" className="w-full min-h-screen relative overflow-hidden text-white flex flex-col justify-between font-barlow -mt-20 pt-20 sm:-mt-28 sm:pt-28">
+      {/* 1. Full-bleed background GIF với dải Feather Gradient chuyển section 2 -> 3 mượt mà */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+        {/* Feather Gradient Mask từ trong suốt ở mép trên xuống đen tuyền */}
+        <div className="absolute top-0 left-0 right-0 h-48 sm:h-64 lg:h-80 bg-gradient-to-b from-transparent via-black/60 to-black z-10 pointer-events-none" />
+        
+        {/* Dark background layer */}
+        <div className="absolute inset-0 bg-black -z-10" />
+
+        {/* Original GIF Background */}
         <img 
           src="https://res.cloudinary.com/dssih4fhl/image/upload/v1785587925/anime_stickers_for_discord_4_Cats_Memes_GIF_-_Cats_Cat_Memes_-_Descubrir_y_compartir_GIFs_a5lhk1.gif" 
           alt="Section 3 Background Animation"
