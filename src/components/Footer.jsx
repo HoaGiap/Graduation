@@ -1,5 +1,5 @@
-import React from 'react';
-import { Award, Heart } from 'lucide-react';
+import React from "react";
+import { Award, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,18 +8,36 @@ export default function Footer() {
         <a href="#" className="flex items-center gap-2.5">
           <Award className="w-6 h-6 text-gold" />
           <span className="font-michroma text-xl font-bold tracking-wider text-white">
-            COMMENCEMENT <span className="gold-text-gradient font-michroma">2024</span>
+            COMMENCEMENT{" "}
+            <span className="gold-text-gradient font-michroma">2026</span>
           </span>
         </a>
-        
+
         <p className="font-sans text-sm text-white/70 flex items-center justify-center gap-1">
-          © 2024 Trần Huỳnh Hoa Giáp. Crafted with <Heart className="w-4 h-4 text-red-500 fill-red-500 inline" /> for Graduation.
+          © 2026 Trần Huỳnh Hoa Giáp. Crafted with{" "}
+          <Heart className="w-4 h-4 text-red-500 fill-red-500 inline" /> for
+          Graduation.
         </p>
 
         <div className="flex flex-wrap justify-center gap-8 text-sm font-medium">
-          <a className="text-white/70 hover:text-gold transition-colors" href="#event">Sự Kiện</a>
-          <a className="text-white/70 hover:text-gold transition-colors" href="#rsvp">RSVP</a>
-          <a className="text-white/70 hover:text-gold transition-colors" href="#map">Bản Đồ</a>
+          <a
+            className="text-white/70 hover:text-gold transition-colors"
+            href="#event"
+          >
+            Sự Kiện
+          </a>
+          <a
+            className="text-white/70 hover:text-gold transition-colors"
+            href="#rsvp"
+          >
+            RSVP
+          </a>
+          <a
+            className="text-white/70 hover:text-gold transition-colors"
+            href="#map"
+          >
+            Bản Đồ
+          </a>
         </div>
       </div>
     </footer>

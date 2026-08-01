@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Calendar, Clock, MapPin, Navigation } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { Calendar, Clock, MapPin, Navigation } from "lucide-react";
 
 export default function EventDetails() {
   const sectionRef = useRef(null);
@@ -7,27 +7,27 @@ export default function EventDetails() {
 
   const cardsData = [
     {
-      id: 'date',
+      id: "date",
       icon: <Calendar className="w-5 h-5 text-gold" />,
-      tags: ['Thứ Bảy', '15/06/2024', 'Chính Thức', 'Trọng Đại'],
-      title: '15 / 06 / 2024',
-      body: 'Lễ tốt nghiệp đại học chính thức được tổ chức trang trọng nhân cột mốc trưởng thành đáng nhớ.',
+      tags: ["Thứ Bảy", "22/08/2026", "Chính Thức", "Trọng Đại"],
+      title: "22 / 08 / 2026",
+      body: "Lễ tốt nghiệp đại học chính thức được tổ chức  nhân cột mốc trưởng thành đáng nhớ.",
     },
     {
-      id: 'time',
+      id: "time",
       icon: <Clock className="w-5 h-5 text-gold" />,
-      tags: ['10:00 AM', 'Đón Khách 09:30', 'Thời Lượng ~2H', 'Đúng Giờ'],
-      title: '10:00 AM',
-      body: 'Thời gian cử hành lễ kéo dài khoảng 2 tiếng. Hội trường mở cửa đón khách và check-in từ 09:30 AM.',
+      tags: ["8:00 AM", "Đón Khách 06:30", "Thời Lượng ~2H", "Time"],
+      title: "8:00 AM",
+      body: "Thời gian cử hành lễ kéo dài khoảng 2 tiếng. Hội trường mở cửa đón khách và check-in từ 06:30 AM.",
     },
     {
-      id: 'location',
+      id: "location",
       icon: <MapPin className="w-5 h-5 text-gold" />,
-      tags: ['Hội Trường Lớn', 'ĐH Bách Khoa', 'Bãi Xe A1-A2', 'Chỉ Đường'],
-      title: 'Hội Trường Lớn',
-      body: 'Buổi lễ diễn ra tại trung tâm khuôn viên. Gửi xe tại Cổng A1 & A2 và di chuyển theo biển hướng dẫn.',
-      hasMapAction: true
-    }
+      tags: ["Hội Trường Khu D", "ĐH DNC", "Bãi Xe ", "Chỉ Đường"],
+      title: "Hội Trường Khu D",
+      body: "Buổi lễ diễn ra tại trung tâm khuôn viên. Gửi xe  và di chuyển theo biển hướng dẫn.",
+      hasMapAction: true,
+    },
   ];
 
   useEffect(() => {
@@ -38,15 +38,16 @@ export default function EventDetails() {
         // Smooth scroll progress: 0 when top enters bottom of screen, 1 when inside screen
         const startThreshold = windowHeight * 0.9;
         const endThreshold = windowHeight * 0.25;
-        const rawProgress = (startThreshold - rect.top) / (startThreshold - endThreshold);
+        const rawProgress =
+          (startThreshold - rect.top) / (startThreshold - endThreshold);
         const progress = Math.min(Math.max(rawProgress, 0), 1);
         setScrollProgress(progress);
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const opacity = scrollProgress;
@@ -54,21 +55,21 @@ export default function EventDetails() {
   const blur = (1 - scrollProgress) * 12;
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="event" 
+      id="event"
       className="w-full min-h-screen bg-black relative overflow-hidden text-white flex flex-col justify-between font-barlow transition-all duration-200 ease-out"
       style={{
         opacity: opacity,
         transform: `translateY(${translateY}px)`,
         filter: `blur(${blur}px)`,
-        willChange: 'opacity, transform, filter'
+        willChange: "opacity, transform, filter",
       }}
     >
       {/* 1. Raw full-bleed background GIF (không lớp phủ, không mờ) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-        <img 
-          src="https://res.cloudinary.com/dssih4fhl/image/upload/v1785587925/anime_stickers_for_discord_4_Cats_Memes_GIF_-_Cats_Cat_Memes_-_Descubrir_y_compartir_GIFs_a5lhk1.gif" 
+        <img
+          src="https://res.cloudinary.com/dssih4fhl/image/upload/v1785587925/anime_stickers_for_discord_4_Cats_Memes_GIF_-_Cats_Cat_Memes_-_Descubrir_y_compartir_GIFs_a5lhk1.gif"
           alt="Section 3 Background Animation"
           className="w-full h-full object-cover pointer-events-none"
         />
@@ -76,18 +77,19 @@ export default function EventDetails() {
 
       {/* 2. Nội dung chính với font Barlow (z-10, px-8 md:px-16 lg:px-20, pt-24 pb-16) */}
       <div className="z-10 px-8 md:px-16 lg:px-20 pt-24 pb-16 flex flex-col justify-between min-h-screen max-w-[1440px] mx-auto w-full font-barlow">
-        
         {/* Header Block */}
         <div className="space-y-4 max-w-4xl">
           {/* Kicker */}
           <div className="text-sm text-gold-light font-barlow uppercase tracking-[0.25em] font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
             // CEREMONY DETAILS
           </div>
-          
+
           {/* Heading */}
           <h2 className="font-instrument italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-tight text-white leading-[1.15] pt-2 pb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             Thông Tin <br />
-            <span className="gold-text-gradient font-instrument italic inline-block pr-6 pt-2 pb-2 drop-shadow-md">Buổi Lễ</span>
+            <span className="gold-text-gradient font-instrument italic inline-block pr-6 pt-2 pb-2 drop-shadow-md">
+              Buổi Lễ
+            </span>
           </h2>
         </div>
 
@@ -123,7 +125,7 @@ export default function EventDetails() {
                 <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                   {card.title}
                 </h3>
-                
+
                 <p className="text-sm font-barlow text-white/90 leading-relaxed max-w-[32ch] drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
                   {card.body}
                 </p>
@@ -142,7 +144,6 @@ export default function EventDetails() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

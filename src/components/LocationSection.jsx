@@ -35,7 +35,7 @@ export default function LocationSection() {
             
             <a 
               className="inline-flex items-center gap-3 px-8 py-3.5 bg-navy text-white font-sans text-xs sm:text-sm uppercase tracking-widest font-semibold hover:bg-gold hover:text-navy transition-all rounded-full shadow-md hover:shadow-gold/20" 
-              href="https://maps.google.com" 
+              href="https://maps.app.goo.gl/iz6MnGgkRiNVLGdMA" 
               target="_blank" 
               rel="noopener noreferrer"
             >
