@@ -21,9 +21,9 @@ export default function JourneySection({ guestName, onEditName }) {
         const top = journeyEl.offsetTop;
         const scrollY = window.scrollY;
         
-        // Progress over normal natural scroll of Section 2
-        const scrollDistance = Math.max(window.innerHeight * 0.9, 1);
-        const progress = Math.min(Math.max((scrollY - top + window.innerHeight * 0.2) / scrollDistance, 0), 1);
+        // Progress starts ONLY when scrolling past Section 2 towards Section 3
+        const scrollDistance = Math.max(window.innerHeight * 0.8, 1);
+        const progress = Math.min(Math.max((scrollY - top) / scrollDistance, 0), 1);
         setScrollProgress(progress);
       }
     };
