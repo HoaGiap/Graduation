@@ -91,26 +91,26 @@ export default function EventDetails() {
           </h2>
         </div>
 
-        {/* 3. Ba Card Liquid Glass với độ tương phản cao */}
+        {/* 3. Ba Card Liquid Glass Trong Suốt Nguyên Bản */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 items-stretch w-full">
           {cardsData.map((card) => (
             <div
               key={card.id}
-              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative font-barlow shadow-2xl"
+              className="liquid-glass rounded-[1.25rem] p-6 min-h-[360px] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative font-barlow"
             >
-              {/* Hàng trên: Icon 44x44 (gold glass square) bên trái + 4 pill tags tương phản cao bên phải */}
+              {/* Hàng trên: Icon 44x44 (liquid-glass square) + 4 pill tags trong suốt */}
               <div className="flex items-start justify-between gap-3 mb-6">
                 {/* Icon square 44x44 (11x4 = 44px) */}
-                <div className="w-11 h-11 shrink-0 rounded-xl bg-gold/20 backdrop-blur-md border border-gold/40 flex items-center justify-center shadow-md">
+                <div className="w-11 h-11 shrink-0 rounded-xl liquid-glass flex items-center justify-center shadow-inner">
                   {card.icon}
                 </div>
 
-                {/* 4 Pill Tags với tương phản sắc nét */}
+                {/* 4 Pill Tags trong suốt glassmorphism với bóng chữ sắc nét */}
                 <div className="flex flex-wrap gap-1.5 justify-end max-w-[68%]">
                   {card.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold font-barlow text-gold-light bg-black/75 backdrop-blur-md border border-gold/30 whitespace-nowrap shadow-sm"
+                      className="px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-medium font-barlow text-white bg-white/10 backdrop-blur-md border border-white/20 whitespace-nowrap shadow-sm drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)]"
                     >
                       {tag}
                     </span>
@@ -118,13 +118,13 @@ export default function EventDetails() {
                 </div>
               </div>
 
-              {/* Dưới: Title + Body text độ tương phản cao */}
+              {/* Dưới: Title + Body text với bóng chữ chống chói nền */}
               <div className="space-y-3 mt-auto">
-                <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <h3 className="font-instrument italic text-3xl md:text-4xl text-white font-normal tracking-tight leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                   {card.title}
                 </h3>
                 
-                <p className="text-sm font-barlow text-slate-100 leading-relaxed max-w-[32ch] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                <p className="text-sm font-barlow text-white/90 leading-relaxed max-w-[32ch] drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
                   {card.body}
                 </p>
 
