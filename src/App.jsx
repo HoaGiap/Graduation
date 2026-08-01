@@ -68,9 +68,9 @@ export default function App() {
       const scrollFraction = Math.min(Math.max(currentScrollY / section2Top, 0), 1);
       targetTimeRef.current = scrollFraction * video.duration;
 
-      // Video is visible during Section 1 & Section 2, fading out at Section 3
+      // Video is visible during Section 1 & Section 2, fading out only after Section 3 navy background covers the view
       const section3Top = getSection3TopOffset();
-      setIsVideoVisible(currentScrollY < (section3Top - 80));
+      setIsVideoVisible(currentScrollY < (section3Top + window.innerHeight * 0.4));
     };
 
     const renderVideoFrame = () => {
