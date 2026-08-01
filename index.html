@@ -52,14 +52,17 @@
         -webkit-text-fill-color: transparent;
       }
       .glass-card {
-        background: rgba(255, 253, 249, 0.85);
-        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
         border: none;
       }
       .dark-glass-card {
-        background: rgba(0, 10, 30, 0.75);
-        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
         border: none;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
       }
       .gold-shadow {
         box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.2);

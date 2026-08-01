@@ -56,7 +56,7 @@ export default function EventDetails() {
           </div>
 
           {/* Card 2 (Center - Elevated Up & Highlighted Hero Card): NGÀY DIỄN RA */}
-          <div className="transform-gpu md:-translate-y-6 z-20 dark-glass-card p-8 sm:p-10 rounded-[32px] border-none shadow-[0_25px_60px_rgba(0,0,0,0.5)] relative overflow-hidden group transition-all duration-500 flex flex-col justify-between bg-gradient-to-b from-navy-surface via-navy-surface to-navy-surface/90">
+          <div className="transform-gpu md:-translate-y-6 z-20 dark-glass-card p-8 sm:p-10 rounded-[32px] border-none shadow-[0_25px_60px_rgba(0,0,0,0.5)] relative overflow-hidden group transition-all duration-500 flex flex-col justify-between">
             <div className="absolute -top-10 -right-10 w-56 h-56 bg-gold/20 rounded-full blur-3xl group-hover:bg-gold/30 transition-all duration-700 pointer-events-none" />
 
             <div>
