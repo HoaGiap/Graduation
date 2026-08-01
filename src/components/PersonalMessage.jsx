@@ -27,9 +27,6 @@ export default function PersonalMessage() {
 
   return (
     <section id="message" className="w-full min-h-screen px-4 sm:px-8 lg:px-12 py-20 flex flex-col justify-center items-center text-center max-w-5xl mx-auto">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-[0.25em] mb-8 gold-shadow">
-        <Clock className="w-4 h-4 text-gold" /> Section 2 — Thư Cảm Ơn & Đếm Ngược
-      </div>
 
       {/* Countdown Timer */}
       <div className="w-full max-w-2xl mx-auto mb-14">

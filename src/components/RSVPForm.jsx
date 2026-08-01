@@ -31,9 +31,6 @@ export default function RSVPForm({ guestName }) {
     <section id="rsvp" className="w-full min-h-screen px-4 sm:px-8 lg:px-12 py-20 bg-transparent text-white relative flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-2xl lg:max-w-3xl mx-auto p-8 sm:p-12 lg:p-16 relative w-full dark-glass-card rounded-3xl shadow-2xl border border-gold/30">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-[0.25em] mb-3 gold-shadow">
-            <CheckSquare className="w-4 h-4 text-gold" /> Section 4 — Xác Nhận Tham Dự
-          </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-center font-bold text-white">Xác Nhận Tham Dự</h2>
         </div>
 

@@ -6,9 +6,6 @@ export default function EventDetails() {
     <section id="event" className="w-full min-h-screen bg-transparent px-4 sm:px-8 lg:px-12 xl:px-16 py-20 flex flex-col justify-center items-center relative">
       <div className="max-w-[1400px] mx-auto w-full">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-[0.25em] mb-4 gold-shadow">
-            <Sparkles className="w-4 h-4 text-gold" /> Section 3 — Thông Tin Buổi Lễ
-          </div>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-navy font-bold">Thông Tin Buổi Lễ</h2>
         </div>
 
