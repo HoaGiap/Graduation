@@ -1,11 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Award, Menu, X, Home, Compass, MessageSquareQuote, Calendar, CheckSquare } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY || window.pageYOffset || 0;
+      
+      // Check if scrolled past top threshold (50px)
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+        // Scroll down hides, scroll up shows (with 5px delta buffer)
+        if (currentScrollY > lastScrollY.current + 5) {
+          setIsVisible(false);
+          setIsMobileMenuOpen(false);
+        } else if (currentScrollY < lastScrollY.current - 5) {
+          setIsVisible(true);
+        }
+      } else {
+        setIsScrolled(false);
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform-gpu ${
+        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+      } ${
+        isScrolled 
+          ? 'bg-cream/85 backdrop-blur-md shadow-md border-b border-gold/15' 
+          : 'bg-transparent shadow-none'
+      }`}
+    >
       <div className="w-full px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center">
         {/* Brand Name: Aligned flush to far left */}
         <a href="#hero" className="flex items-center gap-2.5 group shrink-0">
@@ -81,3 +118,4 @@ export default function Header() {
     </header>
   );
 }
+
