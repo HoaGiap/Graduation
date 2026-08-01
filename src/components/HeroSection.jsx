@@ -71,15 +71,15 @@ export default function HeroSection({ guestName, onEditName }) {
         <div className="z-20 px-4">
           <div 
             onClick={onEditName}
-            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3 rounded-full bg-navy-dark/90 backdrop-blur-md border border-gold/60 text-white font-serif text-base sm:text-xl shadow-2xl cursor-pointer hover:border-gold-bright hover:shadow-gold/30 hover:scale-[1.02] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3 rounded-full glass-card border border-gold/40 text-navy font-serif text-base sm:text-xl shadow-lg cursor-pointer hover:border-gold hover:shadow-gold/20 transition-all duration-300"
             title="Bấm vào đây để thay đổi tên khách mời"
           >
-            <span className="flex items-center gap-1.5 flex-wrap justify-center">
-              <span className="text-slate-100 font-serif">Trân trọng kính mời</span>{' '}
-              <strong className="gold-text-gradient font-bold font-michroma px-1.5 underline decoration-gold/60">
+            <span>
+              Trân trọng kính mời{' '}
+              <strong className="text-gold-dark font-bold font-michroma px-1.5 underline decoration-gold/50">
                 {guestName || '[Tên người]'}
               </strong>{' '}
-              <Edit3 className="w-4.5 h-4.5 text-gold-bright inline-block align-middle ml-1 shrink-0" />
+              <Edit3 className="w-4 h-4 text-gold inline-block align-middle ml-1" />
             </span>
           </div>
         </div>
