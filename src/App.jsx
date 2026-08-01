@@ -4,7 +4,6 @@ import NameModal from './components/NameModal';
 import HeroSection from './components/HeroSection';
 import JourneySection from './components/JourneySection';
 import EventDetails from './components/EventDetails';
-import PersonalMessage from './components/PersonalMessage';
 import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
 
@@ -169,10 +168,9 @@ export default function App() {
         <HeroSection guestName={guestName} onEditName={handleEditName} />
         <JourneySection guestName={guestName} onEditName={handleEditName} />
 
-        {/* Sections 3, 4 & 5 (starting from Section 3 #event) */}
+        {/* Sections 3 & 4 (starting from Section 3 #event) */}
         <div className="bg-transparent text-white">
           <EventDetails />
-          <PersonalMessage />
           <LocationSection />
         </div>
       </main>
