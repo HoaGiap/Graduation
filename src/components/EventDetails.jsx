@@ -46,9 +46,9 @@ export default function EventDetails() {
           </div>
           
           {/* Heading */}
-          <h2 className="font-instrument italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-[-3px] text-white leading-[0.95]">
+          <h2 className="font-instrument italic font-normal text-6xl md:text-7xl lg:text-[6rem] tracking-tight text-white leading-[1.15] pt-2 pb-2">
             Thông Tin <br />
-            <span className="gold-text-gradient font-instrument italic">Buổi Lễ</span>
+            <span className="gold-text-gradient font-instrument italic inline-block pr-6 pt-2 pb-2">Buổi Lễ</span>
           </h2>
         </div>
 
