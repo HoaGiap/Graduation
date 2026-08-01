@@ -169,8 +169,8 @@ export default function App() {
         <HeroSection guestName={guestName} onEditName={handleEditName} />
         <JourneySection guestName={guestName} onEditName={handleEditName} />
 
-        {/* Sections 3, 4 & 5 (starting from Section 3 #event) */}
-        <div className="bg-transparent text-white">
+        {/* Sections 3, 4 & 5 (Navy Glass Background starting from Section 3 #event) */}
+        <div className="bg-navy/95 text-white transition-colors duration-700 backdrop-blur-xl border-t border-gold/30">
           <EventDetails />
           <PersonalMessage />
           <LocationSection />
