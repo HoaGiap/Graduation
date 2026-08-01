@@ -21,16 +21,16 @@ export default function EventDetails() {
           </p>
         </div>
 
-        {/* 3-Card Staggered Layout (Tương tự ảnh tham khảo: Trái thấp, Giữa cao nổi bật, Phải thấp) */}
+        {/* 3-Card Staggered Layout (Không viền - Borderless Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-6 md:pt-10 pb-6">
           
           {/* Card 1 (Left - Shifted Down): THỜI GIAN */}
-          <div className="transform-gpu md:translate-y-6 dark-glass-card p-8 sm:p-10 rounded-[32px] border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1">
+          <div className="transform-gpu md:translate-y-6 dark-glass-card p-8 sm:p-10 rounded-[32px] border-none shadow-2xl relative overflow-hidden group transition-all duration-500 flex flex-col justify-between hover:-translate-y-1">
             <div className="absolute top-0 right-0 w-48 h-48 bg-gold/10 rounded-full blur-3xl group-hover:bg-gold/20 transition-all duration-700 pointer-events-none" />
             
             <div>
               {/* Top Card Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-widest mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 text-gold text-xs font-semibold uppercase tracking-widest mb-8 border-none">
                 <Clock className="w-4 h-4 text-gold" /> Thời Gian
               </div>
 
@@ -49,20 +49,20 @@ export default function EventDetails() {
             </div>
 
             {/* Bottom Footer Info */}
-            <div className="pt-6 mt-8 border-t border-gold/20 flex items-center justify-between text-xs text-white/60">
+            <div className="pt-6 mt-8 border-none flex items-center justify-between text-xs text-white/60">
               <span>Thời lượng: ~2 tiếng</span>
               <span className="text-gold font-semibold font-michroma">Check-in</span>
             </div>
           </div>
 
           {/* Card 2 (Center - Elevated Up & Highlighted Hero Card): NGÀY DIỄN RA */}
-          <div className="transform-gpu md:-translate-y-6 z-20 dark-glass-card p-8 sm:p-10 rounded-[32px] border-2 border-gold/60 shadow-[0_20px_50px_rgba(212,175,55,0.15)] relative overflow-hidden group hover:border-gold transition-all duration-500 flex flex-col justify-between bg-gradient-to-b from-navy-surface via-navy-surface to-navy-surface/90">
+          <div className="transform-gpu md:-translate-y-6 z-20 dark-glass-card p-8 sm:p-10 rounded-[32px] border-none shadow-[0_25px_60px_rgba(0,0,0,0.5)] relative overflow-hidden group transition-all duration-500 flex flex-col justify-between bg-gradient-to-b from-navy-surface via-navy-surface to-navy-surface/90">
             <div className="absolute -top-10 -right-10 w-56 h-56 bg-gold/20 rounded-full blur-3xl group-hover:bg-gold/30 transition-all duration-700 pointer-events-none" />
 
             <div>
               {/* Top Hero Badge */}
               <div className="flex items-center justify-between mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold text-navy text-xs font-bold uppercase tracking-widest shadow-md">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold text-navy text-xs font-bold uppercase tracking-widest shadow-md border-none">
                   <Sparkles className="w-4 h-4 text-navy fill-navy" /> Ngày Trọng Đại
                 </div>
                 <span className="font-michroma text-xs text-gold font-bold uppercase tracking-widest">YEAR 2024</span>
@@ -86,7 +86,7 @@ export default function EventDetails() {
             </div>
 
             {/* Bottom Footer Info */}
-            <div className="pt-6 mt-8 border-t border-gold/30 flex items-center justify-between text-xs text-white">
+            <div className="pt-6 mt-8 border-none flex items-center justify-between text-xs text-white">
               <span className="flex items-center gap-1.5 text-gold font-semibold">
                 <ShieldCheck className="w-4 h-4" /> Lễ trao bằng
               </span>
@@ -95,12 +95,12 @@ export default function EventDetails() {
           </div>
 
           {/* Card 3 (Right - Shifted Down): ĐỊA ĐIỂM */}
-          <div className="transform-gpu md:translate-y-6 dark-glass-card p-8 sm:p-10 rounded-[32px] border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1">
+          <div className="transform-gpu md:translate-y-6 dark-glass-card p-8 sm:p-10 rounded-[32px] border-none shadow-2xl relative overflow-hidden group transition-all duration-500 flex flex-col justify-between hover:-translate-y-1">
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-3xl group-hover:bg-gold/20 transition-all duration-700 pointer-events-none" />
 
             <div>
               {/* Top Card Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-widest mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 text-gold text-xs font-semibold uppercase tracking-widest mb-8 border-none">
                 <MapPin className="w-4 h-4 text-gold" /> Địa Điểm
               </div>
 
@@ -119,10 +119,10 @@ export default function EventDetails() {
             </div>
 
             {/* Bottom Footer Action */}
-            <div className="pt-6 mt-8 border-t border-gold/20">
+            <div className="pt-6 mt-8 border-none">
               <a
                 href="#map"
-                className="w-full py-3 px-4 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300 flex items-center justify-center gap-2 border-none"
               >
                 <Navigation className="w-4 h-4" /> Xem Bản Đồ Chỉ Đường
               </a>
