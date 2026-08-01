@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Navigation, ShieldCheck, Shirt } from 'lucide-react';
+import { Calendar, Clock, MapPin, Navigation, ShieldCheck } from 'lucide-react';
 
 export default function EventDetails() {
   return (
@@ -74,13 +74,13 @@ export default function EventDetails() {
             </div>
           </div>
 
-          {/* Venue Location Card (Span 8) */}
-          <div className="md:col-span-8 dark-glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div className="space-y-3 z-10 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest border border-gold/20">
-                <MapPin className="w-3.5 h-3.5" /> Địa Điểm Buổi Lễ
+          {/* Venue Location Card (Full Width Span 12) */}
+          <div className="md:col-span-12 dark-glass-card p-8 sm:p-10 lg:p-12 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-3 z-10 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest border border-gold/20">
+                <MapPin className="w-4 h-4 text-gold" /> Địa Điểm Buổi Lễ
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
                 Hội trường Lớn — <span className="gold-text-gradient">Đại học Bách Khoa</span>
               </h3>
               <p className="text-white/70 text-sm sm:text-base leading-relaxed">
@@ -90,25 +90,10 @@ export default function EventDetails() {
 
             <a
               href="#map"
-              className="shrink-0 z-10 px-6 py-3.5 rounded-full bg-gold text-navy font-bold text-xs uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300 flex items-center gap-2"
+              className="shrink-0 z-10 px-8 py-4 rounded-full bg-gold text-navy font-bold text-xs sm:text-sm uppercase tracking-widest hover:bg-white hover:shadow-gold/30 transition-all duration-300 flex items-center gap-2.5"
             >
-              <Navigation className="w-4 h-4" /> Xem Bản Đồ
+              <Navigation className="w-4.5 h-4.5" /> Xem Bản Đồ
             </a>
-          </div>
-
-          {/* Dress Code Card (Span 4) */}
-          <div className="md:col-span-4 dark-glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden group hover:border-gold/60 transition-all duration-500 flex flex-col justify-between">
-            <div className="space-y-3 z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest border border-gold/20">
-                <Shirt className="w-3.5 h-3.5" /> Trang Phục
-              </div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                Lịch Sự &amp; Trang Trọng
-              </h3>
-              <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
-                Trang phục công sở/sơ mi hoặc áo cử nhân để có những bức ảnh kỷ niệm tuyệt đẹp nhất.
-              </p>
-            </div>
           </div>
 
         </div>
